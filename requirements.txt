@@ -1,0 +1,38 @@
+# Core Python and ML stack
+numpy
+pandas
+matplotlib
+scikit-learn
+torch
+torchvision
+
+# Web app & API frameworks
+fastapi
+uvicorn
+streamlit
+python-multipart
+
+# MLOps tools
+mlflow
+docker
+pydantic
+joblib
+
+# Cloud & deployment
+azure-ai-ml
+azure-storage-blob
+requests
+
+# Visualization & experimentation
+plotly
+seaborn
+tqdm
+
+# Utilities
+PyYAML
+jinja2
+typing-extensions
+
+# Optional dev & notebook support
+jupyter
+notebook
