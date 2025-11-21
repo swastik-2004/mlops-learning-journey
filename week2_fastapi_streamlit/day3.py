@@ -18,25 +18,12 @@ def load_model():
     model.eval()
     print("✅ Model loaded successfully!")
 
-class PredictRequest(BaseModel):
-    pixels: list
 
 # Root endpoint
 @app.get("/")
 def root():
     return {"message": "MNIST Prediction API is running!"}
 
-@app.post("/predict")
-def predict(request: PredictRequest):
-    x=torch.tensor(request.pixels).view(1, 1, 28, 28).float()
-
-    with torch.no_grad():
-        logits = model(x)
-        probs = F.softmax(logits, dim=1)
-        pred_class = torch.argmax(probs, dim=1).item()
-        confidence = torch.max(probs).item()
-
-    return {"prediction": pred_class, "confidence": round(confidence, 4)}
 
 @app.post("/predict_image")
 async def predict_image(file: UploadFile = File(...)):
